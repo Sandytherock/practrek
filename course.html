@@ -383,18 +383,15 @@
                 </script>
                 
                 <style>
-                    /* Ensure all cards have the same size */
+                    /* Base styles for course items */
                     .course-item {
-                        padding: 15px; /* Ensure consistent padding */
-                        height: 100%;  /* Make cards fill the available space */
+                        padding: 15px;
+                        height: 100%;
                         display: flex;
                         flex-direction: column;
                     }
                 
-                    .col-xl-3, .col-lg-4, .col-md-6, .col-sm-6 {
-                        max-width: calc(25% - 20px); /* Ensure cards take equal space */
-                    }
-                
+                    /* Thumbnail images */
                     .course-thumb img {
                         width: 100%;
                         height: auto;
@@ -402,10 +399,38 @@
                         border-radius: 8px;
                     }
                 
+                    /* Ensure course content fills the remaining space */
                     .course-content {
-                        flex-grow: 1; /* Allow content to take remaining space */
+                        flex-grow: 1;
+                    }
+                
+                    /* Grid layout for large screens (default) */
+                    .col-xl-3, .col-lg-4, .col-md-6, .col-sm-6 {
+                        max-width: calc(25% - 20px); /* Ensure equal spacing */
+                    }
+                
+                    /* Media query for tablets (screen width ≤ 1024px) */
+                    @media (max-width: 1024px) {
+                        .col-xl-3, .col-lg-4, .col-md-6, .col-sm-6 {
+                            max-width: calc(33.33% - 20px); /* Adjust to three columns */
+                        }
+                    }
+                
+                    /* Media query for smaller tablets and large phones (screen width ≤ 768px) */
+                    @media (max-width: 768px) {
+                        .col-xl-3, .col-lg-4, .col-md-6, .col-sm-6 {
+                            max-width: calc(50% - 20px); /* Adjust to two columns */
+                        }
+                    }
+                
+                    /* Media query for mobile phones (screen width ≤ 576px) */
+                    @media (max-width: 576px) {
+                        .col-xl-3, .col-lg-4, .col-md-6, .col-sm-6 {
+                            max-width: calc(100% - 20px); /* Adjust to one column */
+                        }
                     }
                 </style>
+                
                 
         
         
